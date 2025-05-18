@@ -246,7 +246,7 @@ a \in \mathbb{R} \wedge b,c,d \in \mathbb{R}^*
 
 \section{Axiomas e teoremas de ordem}\label{axiomas-e-teoremas-de-ordem}
 
-\begin{proposition}["Tricotomia]
+\begin{proposition}[Tricotomia]
 \protect\hypertarget{prp:irtricotomia}{}\label{prp:irtricotomia}\[
 a,b \in \mathbb{R} \quad  \Leftrightarrow \quad  a < b \quad \text{ ou } \quad a > b \quad \text{ ou } \quad  a = b
 \]
@@ -312,6 +312,192 @@ a, b \in \mathbb{R}^* \mid a < b \Rightarrow -a > -b
 \[
 f(x) = x^2
 \]
+
+\chapter{Polinômios Reais}\label{polinuxf4mios-reais}
+
+\begin{theorem}[Função polinomial]
+\(P: \mathbb{R} \rightarrow \mathbb{R} \mid P(x) = a_0 + a_1x + \dots + a_nx^n = \sum_{k=1}^n a_kx^k, \forall a \in \mathbb{R}\)
+\end{theorem}
+
+Sendo assim, um polinômio é uma função definida pela soma de uma função constante e n funções potência de \(x\) sendo n o \textbf{grau} \(\delta\) do polinômio e os fatores \(a_k\) os coeficientes do polinômio, a função constante também pode ser vista como uma uma função potência de expoente 0.
+
+\section{Operações}\label{operauxe7uxf5es}
+
+Dados os polinômios \(f(x) = \sum_{k=1}^n a_kx^k\) e \(g(x) = \sum_{k=1}^m b_kx^k\) estão definidas as operações:
+
+\begin{definition}[Polinômio nulo]
+\protect\hypertarget{def:polinomionulo}{}\label{def:polinomionulo}\(f(x) = 0 \ \forall x \in \mathbb{R} \Leftrightarrow  \sum_{k=1}^n a_kx^k = 0 \Leftrightarrow a_k = 0\)
+\end{definition}
+
+\begin{definition}[Soma]
+\protect\hypertarget{def:somapolinomio}{}\label{def:somapolinomio}\(f(x) + g(x) = \sum_{k=1}^n a_kx^k + \sum_{k=1}^m b_kx^k = \sum_{k=1}^{\max(m,n)} (a_k + b_k)x^k\)
+\end{definition}
+
+\begin{definition}[Igualdade]
+\protect\hypertarget{def:igualdadepolinomio}{}\label{def:igualdadepolinomio}\(f(x) = g(x) \Leftrightarrow \sum_{k=1}^n a_kx^k = \sum_{k=1}^m b_kx^k \Leftrightarrow \sum_{k=1}^n a_kx^k - \sum_{k=1}^m b_kx^k = 0 \Leftrightarrow \sum_{k=1}^{\max(m,n)} a_kx^k - b_kx^k \Leftrightarrow \sum_{k=1}^{\max(m,n)} (a_k - b_k)x^k \Leftrightarrow a_k = b_k\)
+\end{definition}
+
+\begin{definition}[Multiplicação]
+\protect\hypertarget{def:prodpolinomio}{}\label{def:prodpolinomio}\[
+f(x)g(x) = 
+\begin{aligned}
+    &a_0b_0 
+    + a_0b_1x 
+    + a_0b_2x^2 
+    + \cdots 
+    + a_0b_mx^m \\
+  +\ &a_1b_0x 
+    + a_1b_1x^2 
+    + a_1b_2x^3 
+    + \cdots 
+    + a_1b_mx^{m+1} \\
+  +\ &a_2b_0x^2 
+    + a_2b_1x^3 
+    + a_2b_2x^4 
+    + \cdots 
+    + a_2b_mx^{m+2} \\
+  &\vdots \\
+  +\ &a_nb_0x^n 
+    + a_nb_1x^{n+1} 
+    + a_nb_2x^{n+2} 
+    + \cdots 
+    + a_nb_mx^{m+n}
+\end{aligned}
+\equiv \sum_{k=0}^{m+n} \left( \sum_{i=0}^k a_i b_{k-i} \right) x^k
+\]
+\end{definition}
+
+\begin{definition}[Divisão]
+\protect\hypertarget{def:divpolinomio}{}\label{def:divpolinomio}Na divisão \(\frac{f(x)}{g(x)}\) o objetivo é definir outros dois polinômios \(q(x)\) e \(r(x)\), chamados quociente e resto respectivamente, tais que:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f(x) = g(x)q(x) + r(x)\)
+\item
+  \(\delta r < \delta g\)
+\end{enumerate}
+
+Por \citep{somapolinomio} temos que \(\delta f = \max (\delta qg, \delta r)\) e como \(\delta r < \delta g \Rightarrow \delta f = \delta gq = \delta g + \delta q \Rightarrow \delta q = |\delta f - \delta g|\)
+\end{definition}
+
+\chapter{Simetria de funções}\label{simetria-de-funuxe7uxf5es}
+
+\begin{definition}[Domínio simétrico em relação à origem]
+\protect\hypertarget{def:defsimetriaorigem}{}\label{def:defsimetriaorigem}Seja \(f: \mathbb{R} \rightarrow \mathbb{R}\), dizemos que \(f\) tem domínio simétrico em relação à origem se, e somente se, \(\forall x \in Df \Leftrightarrow -x \in Df\)
+\end{definition}
+
+\begin{definition}[Função par e ímpar]
+\protect\hypertarget{def:defparimpar}{}\label{def:defparimpar}
+
+Seja a função real \(f\) com domínio simétrico na origem, temos que:
+
+\begin{itemize}
+\tightlist
+\item
+  \(f(x)\) é \textbf{par} \(\Leftrightarrow f(x) = f(-x)\)
+\item
+  \(f(x)\) é \textbf{ímpar} \(\Leftrightarrow f(x) = -f(-x)\)
+\end{itemize}
+
+\end{definition}
+
+\section{Propriedades}\label{propriedades}
+
+Sejam \(\jmath\) e \(\Im\) classes de funções tal que \(\forall f \in \jmath\) é par e \(\forall g \in \Im\) é ímpar, temos as seguintes propriedades.
+
+\begin{theorem}[Elemento oposto]
+\(f(x) - f(-x) = 0\) e \(g(x)+g(-x)=0\)
+\end{theorem}
+
+\begin{theorem}[Somas internas à classe]
+\textbf{1)} \(f_i(x) + f_j(x) \in \jmath\) e \(f_i(x) - f_j(x) \in \jmath\)
+
+\textbf{2)} \(g_i(x) + g_j(x) \in \Im\) e \(g_i(x) - g_j(x) \in \Im\)
+\end{theorem}
+
+\begin{proof}
+\[
+h(x) = f_i(x)+f_j(x)=f_i(-x)+f_j(-x)=h(-x)
+\]
+
+\[
+h(x) = f_i(x)-f_j(x) = f_i(-x)-f_j(-x)=h(-x)
+\]
+
+\[
+h(x)=g_i(x)+g_j(x)=-g_i(-x)-g_j(-x)=-h(-x)
+\]
+
+\[
+h(x)=g_i(x)-g_j(x)=g_i(x)+g_j(-x)=-h(-x)
+\]
+\end{proof}
+
+\begin{theorem}[Produto interno à classe]
+\(f_i(x)f_j(x) \in \jmath\) e \(g_i(x)g_j(x) \in \jmath\)
+\end{theorem}
+
+\begin{proof}
+\[
+f_i(x)f_j(x) = f_i(-x)f_j(-x)
+\]
+
+\[
+g_i(x)g_j(x)=(-g_i(-x))(-g_j(-x))=g_i(-x)g_j(-x)
+\]
+\end{proof}
+
+\begin{theorem}[Produto interclasse]
+\(f(x)g(x) \in \Im\)
+\end{theorem}
+
+\begin{proof}
+\[
+fg(x) = f(x)g(x)=f(-x)(-g(-x))=-fg(-x)
+\]
+\end{proof}
+
+\begin{theorem}[Soma interclasse]
+Se \(\operatorname{Im} f \neq 0\) e \(\operatorname{Im} g \neq 0\), então seja \(h(x) = f(x) + g(x)\), temos que \(h(x) \notin \jmath\) e \(h(x) \notin \Im\)
+\end{theorem}
+
+\begin{proof}
+\[
+h(x) = f(x) + g(x) = f(-x) - g(-x) \therefore h(x) \neq h(-x) \wedge h(x) \neq -h(-x)
+\]
+\end{proof}
+
+\begin{theorem}[Decomposição em função par e ímpar]
+\(\forall h : \mathbb{R} \rightarrow \mathbb{R}\) com domínio simétrico em relação à origem, podemos definir as funções \(h_{\text{ímpar}} = h(x)-h(-x)\) e \(h_{\text{par}} = h(x)+h(-x)\) de modo que \(2h = h_{\text{par}} + h_{\text{ímpar}}\)
+\end{theorem}
+
+\begin{proof}
+\textbf{Parte 1:} Mostremos que \(h_{\text{par}}(x) = \frac{h(x) + h(-x)}{2}\) é par.
+
+\[
+h_{\text{par}}(-x) = \frac{h(-x) + h(--x)}{2} = \frac{h(-x) + h(x)}{2} = h_{\text{par}}(x)
+\]
+
+\textbf{Parte 2:} Mostremos que \(h_{\text{impar}}(x) = \frac{h(x) - h(-x)}{2}\) é ímpar.
+
+\[
+h_{\text{impar}}(-x) = \frac{h(-x) - h(--x)}{2} = \frac{h(-x) - h(x)}{2} = -\frac{h(x) - h(-x)}{2} = -h_{\text{impar}}(x)
+\]
+
+\textbf{Parte 3:} Soma das partes par e ímpar:
+
+\[
+h_{\text{par}}(x) + h_{\text{impar}}(x) = \frac{h(x) + h(-x)}{2} + \frac{h(x) - h(-x)}{2} = \frac{2h(x)}{2} = h(x)
+\]
+
+Logo,
+
+\[
+h(x) = \frac{h(x) + h(-x)}{2} + \frac{h(x) - h(-x)}{2}
+\]
+\end{proof}
 
   \bibliography{book.bib,packages.bib}
 

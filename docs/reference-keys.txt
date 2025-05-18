@@ -1,3 +1,7 @@
 definição-axiomatica-dos-números-reais
 axiomas-e-teoremas-de-corpo
 axiomas-e-teoremas-de-ordem
+polinômios-reais
+operações
+simetria-de-funções
+propriedades

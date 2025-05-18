@@ -2,7 +2,9 @@ delete_merged_file: true
 output_dir: "docs"
 # before_chapter_script: source.R
 rmd_files: ["index.Rmd",
-            "notes/reais.Rmd",
+            "notes/reais.Rmd", 
+            "notes/polinomios.Rmd",
+            "notes/funcoes_simetria.Rmd",
             "references.Rmd"]
 language:
   label:

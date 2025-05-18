@@ -13,8 +13,17 @@ pre code {
   white-space: inherit;
 }
 
-.prp .bookdown-theorem-title {
-  color: #0077cc;  /* azul */
+.proposition p strong{
+  color: #266f47;  /* azul */
   font-weight: bold;
 }
 
+.theorem p strong{
+  color: #e59c3e;  /* azul */
+  font-weight: bold;
+}
+
+.definition p strong{
+  color: #d57da0;  /* azul */
+  font-weight: bold;
+}

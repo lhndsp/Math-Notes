@@ -92,7 +92,7 @@ $$
 
 ## Axiomas e teoremas de ordem
 
-::: {#irtricotomia .proposition name="\"Tricotomia"}
+::: {#irtricotomia .proposition name="Tricotomia"}
 $$
 a,b \in \mathbb{R} \quad  \Leftrightarrow \quad  a < b \quad \text{ ou } \quad a > b \quad \text{ ou } \quad  a = b
 $$
