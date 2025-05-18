@@ -10,7 +10,7 @@ bibliography: [book.bib, packages.bib]
 description: |
   Textos em ánalise e algebra linear
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: lhndsp/Math-Notes
 ---
 
 ```{r eval=FALSE}
