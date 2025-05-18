@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Math Notes</title>
+  <title>Math Notes</title>
   <meta name="description" content="Textos em ánalise e algebra linear" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Math Notes" />
+  <meta property="og:title" content="Math Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Textos em ánalise e algebra linear" />
   <meta name="github-repo" content="lhndsp/Math-Notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Math Notes" />
+  <meta name="twitter:title" content="Math Notes" />
   
   <meta name="twitter:description" content="Textos em ánalise e algebra linear" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="definição-axiomatica-dos-números-reais.html"/>
 
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -140,7 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="references.html"><a href="#defini%C3%A7%C3%A3o-axiomatica-dos-n%C3%BAmeros-reais"><i class="fa fa-check"></i><b>1</b> Definição axiomatica dos números reais</a>
+<li class="chapter" data-level="1" data-path="notes/reais.html"><a href="#defini%C3%A7%C3%A3o-axiomatica-dos-n%C3%BAmeros-reais"><i class="fa fa-check"></i><b>1</b> Definição axiomatica dos números reais</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="definição-axiomatica-dos-números-reais.html"><a href="definição-axiomatica-dos-números-reais.html"><i class="fa fa-check"></i><b>1.1</b> Axiomas e teoremas de corpo</a></li>
 <li class="chapter" data-level="1.2" data-path="definição-axiomatica-dos-números-reais.html"><a href="definição-axiomatica-dos-números-reais.html#axiomas-e-teoremas-de-ordem"><i class="fa fa-check"></i><b>1.2</b> Axiomas e teoremas de ordem</a></li>
@@ -166,17 +166,160 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered hasAnchor">
-<h1>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="header">
+<h1 class="title">Math Notes</h1>
+<p class="author"><em>Lucas Porto</em></p>
+<p class="date"><em>2025-05-18</em></p>
+</div>
+<div id="definição-axiomatica-dos-números-reais" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Definição axiomatica dos números reais<a href="#defini%C3%A7%C3%A3o-axiomatica-dos-n%C3%BAmeros-reais" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="axiomas-e-teoremas-de-corpo" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Axiomas e teoremas de corpo<a href="definição-axiomatica-dos-números-reais.html#axiomas-e-teoremas-de-corpo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="proposition">
+<p><span id="prp:ircomutativa" class="proposition"><strong>Axioma 1.1  (Comutatividade) </strong></span><span class="math display">\[
+a + b = b + a \text{ e } ab = ba
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:irassociativa" class="proposition"><strong>Axioma 1.2  (Associatividade) </strong></span><span class="math display">\[
+(a + b) + c = a + (c + b) \text{ e } (ab)c = a(bc)
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:irneutro" class="proposition"><strong>Axioma 1.3  (Elemento Neutro) </strong></span><span class="math display">\[
+a + 0 = a \text{ e } 1a = a
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:irdistributiva" class="proposition"><strong>Axioma 1.4  (Distributividade) </strong></span><span class="math display">\[
+a (b + c) = ab + cd
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:irsimetrico" class="proposition"><strong>Axioma 1.5  (Simétrico ou oposto em relação a adição) </strong></span><span class="math display">\[
+\forall a \in \mathbb{R} \exists! b \in \mathbb{R} \mid a + b = 0,\ b \equiv -a
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:irreciproco" class="proposition"><strong>Axioma 1.6  (Recíproco ou oposto em relação a multiplicação) </strong></span><span class="math display">\[
+\forall a \in \mathbb{R} \exists!  b \in \mathbb{R} \mid ab = 1
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmsimpladd" class="theorem"><strong>Teorema 1.1  (Simplificação para adição) </strong></span><span class="math display">\[
+\forall a,b,c \in \mathbb{R} \mid a+b=a+c \Rightarrow b = c
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmsubtr" class="theorem"><strong>Teorema 1.2  (Subtração) </strong></span><span class="math display">\[
+\forall a,b \in \mathbb{R} \exists! x \in \mathbb{R} \mid a + (-x) = b, \quad a-x=b
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmdiv" class="theorem"><strong>Teorema 1.3  (Divisão) </strong></span><span class="math display">\[
+\forall a,b \in \mathbb{R} \exists! x \in \mathbb{R}^* \mid xb = a, \quad \frac{a}{x}=b, \quad \frac{a}{b} = x
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmfrceq" class="theorem"><strong>Teorema 1.4  (Frações iguais) </strong></span><span class="math display">\[
+a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^*
+\Rightarrow
+\frac{a}{b} = \frac{c}{d} \Leftrightarrow ad = bc
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmfracinv" class="theorem"><strong>Teorema 1.5  (Recíprocos de frações) </strong></span><span class="math display">\[
+a, b \in \mathbb{R}^* \Rightarrow \frac{1}{\frac{a}{b}} = \frac{b}{a}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmfracsum" class="theorem"><strong>Teorema 1.6  (Soma e subtração de frações) </strong></span><span class="math display">\[
+a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^*
+\Rightarrow
+\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}
+\quad \text{e} \quad
+\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmfracmult" class="theorem"><strong>Teorema 1.7  (Multiplicação de frações) </strong></span><span class="math display">\[
+a \in \mathbb{R} \wedge b,c,d \in \mathbb{R}^*
+\Rightarrow
+\frac{a}{b}\frac{c}{d} = \frac{ac}{bd}
+\quad \text{e} \quad
+\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b} \frac{d}{c}
+\]</span></p>
+</div>
+</div>
+<div id="axiomas-e-teoremas-de-ordem" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Axiomas e teoremas de ordem<a href="definição-axiomatica-dos-números-reais.html#axiomas-e-teoremas-de-ordem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="proposition">
+<p><span id="prp:irtricotomia" class="proposition"><strong>Axioma 1.7  ("Tricotomia) </strong></span><span class="math display">\[
+a,b \in \mathbb{R} \quad  \Leftrightarrow \quad  a &lt; b \quad \text{ ou } \quad a &gt; b \quad \text{ ou } \quad  a = b
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmordsum" class="theorem"><strong>Teorema 1.8  </strong></span><span class="math display">\[
+a, b \in \mathbb{R}^+ \Rightarrow a + b \in \mathbb{R}^+
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmordsubrt" class="theorem"><strong>Teorema 1.9  </strong></span><span class="math display">\[
+a, b \in \mathbb{R}^* \mid a &lt; b \Rightarrow a-b&lt;0
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmordmult" class="theorem"><strong>Teorema 1.10  </strong></span><span class="math display">\[
+\left\{\begin{matrix}
+a,b \in \mathbb{R}^+ \Rightarrow ab \in \mathbb{R}^+ \\
+a \in \mathbb{R}^+, b \in \mathbb{R}^- \Rightarrow ab \in \mathbb{R}^- \\
+a \in \mathbb{R}^-, b \in \mathbb{R}^+ \Rightarrow ab \in \mathbb{R}^- \\
+\end{matrix}\right.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:defordmult" class="definition"><strong>Definição 1.1  </strong></span><span class="math display">\[
+a,b \in \mathbb{R}^- \Rightarrow ab \in \mathbb{R}^+
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmorddiv" class="theorem"><strong>Teorema 1.11  </strong></span><span class="math display">\[
+\forall a,b \in \mathbb{R}^*
+\left\{\begin{matrix}
+|a| &lt; |b| \Rightarrow \frac{a}{b} \in \left]-1,1 \right[\ \\
+|a| &gt; |b| \Rightarrow \frac{a}{b} \notin \left]-1,1 \right[\ \\
+|a| = |b| \Rightarrow \frac{a}{b} = 1
+\end{matrix}\right.
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmordtrans" class="theorem"><strong>Teorema 1.12  </strong></span><span class="math display">\[
+a, b, c \in \mathbb{R} \mid a &lt; b \Rightarrow a+c &lt; b+c
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmordmulti" class="theorem"><strong>Teorema 1.13  </strong></span><span class="math display">\[
+a, b \in \mathbb{R}, c \in \mathbb{R}^- \mid a &lt; b \Rightarrow ac &gt; bc
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:thmordinv" class="theorem"><strong>Teorema 1.14  </strong></span><span class="math display">\[
+a, b \in \mathbb{R}^* \mid a &lt; b \Rightarrow -a &gt; -b
+\]</span></p>
+</div>
+<p><span class="math display">\[
+f(x) = x^2
+\]</span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="definição-axiomatica-dos-números-reais.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
+<a href="references.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -207,7 +350,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/references.Rmd",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/notes/reais.Rmd",
     "text": "Edit"
   },
   "history": {

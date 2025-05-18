@@ -16,7 +16,7 @@ language:
     thm: 'Teorema '
     lem: 'Lema '
     cor: 'Corolário '
-    prp: 'Proposição '
+    prp: 'Axioma '
     cnj: 'Conjetura '
     def: 'Definição '
     exm: 'Exemple '

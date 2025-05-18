@@ -106,6 +106,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 \usepackage{bookmark}
@@ -125,7 +126,7 @@
 \newtheorem{theorem}{Teorema}[chapter]
 \newtheorem{lemma}{Lema}[chapter]
 \newtheorem{corollary}{Corolário}[chapter]
-\newtheorem{proposition}{Proposição}[chapter]
+\newtheorem{proposition}{Axioma}[chapter]
 \newtheorem{conjecture}{Conjetura}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definição}[chapter]
@@ -151,37 +152,45 @@
 \end{Highlighting}
 \end{Shaded}
 
-\chapter{Números reais}\label{nuxfameros-reais}
+\chapter{Definição axiomatica dos números reais}\label{definiuxe7uxe3o-axiomatica-dos-nuxfameros-reais}
 
-\section{Axiomas e teoremas}\label{axiomas-e-teoremas}
+\section{Axiomas e teoremas de corpo}\label{axiomas-e-teoremas-de-corpo}
 
-\citep{anton2000}
+\begin{proposition}[Comutatividade]
+\protect\hypertarget{prp:ircomutativa}{}\label{prp:ircomutativa}\[
+a + b = b + a \text{ e } ab = ba
+\]
+\end{proposition}
 
-\subsection{Corpo}\label{corpo}
+\begin{proposition}[Associatividade]
+\protect\hypertarget{prp:irassociativa}{}\label{prp:irassociativa}\[
+(a + b) + c = a + (c + b) \text{ e } (ab)c = a(bc)
+\]
+\end{proposition}
 
-Defini-se como \textbf{corpo} qualquer conjunto \(\mathbb{K}\) no qual estão definidas as operações de soma e multiplicação que satisfazem as propriedades:
+\begin{proposition}[Elemento Neutro]
+\protect\hypertarget{prp:irneutro}{}\label{prp:irneutro}\[
+a + 0 = a \text{ e } 1a = a
+\]
+\end{proposition}
 
-\begin{equation} 
-\forall x \in \mathbb{R} ~~ \exists! ~~  a,b,c,d \in \mathbb{R} \mid x = a + b, x = cd\label{eq:ra0}
-\end{equation} \begin{equation} 
-(a + b) + c = a + (c + b) \text{ e } (ab)c = a(bc)\label{eq:ra1}
-\end{equation} \begin{equation} 
-a + b = b + a \text{ e } ab = ba\label{eq:ra2}
-\end{equation} \begin{equation} 
-a + 0 = a \text{ e } 1a = a\label{eq:ra3}
-\end{equation} \begin{equation} 
-a (b + c) = ab + cd\label{eq:ra4}
-\end{equation} \begin{equation} 
-\forall a \in \mathbb{R} \exists! b \in \mathbb{R} \mid a + b = 0\label{eq:ra5}
-\end{equation} \begin{equation} 
-\forall a \in \mathbb{R} \exists!  b \in \mathbb{R} \mid ab = 1\label{eq:ra6}
-\end{equation} \begin{equation} 
--(-a) = a\label{eq:ra7}
-\end{equation}
+\begin{proposition}[Distributividade]
+\protect\hypertarget{prp:irdistributiva}{}\label{prp:irdistributiva}\[
+a (b + c) = ab + cd
+\]
+\end{proposition}
 
-São exemplos de corpos os conjuntos \(\mathbb{Q}\), \(\mathbb{R}\) e \(\mathbb{C}\), sendo que \(\mathbb{N}\) não considerado um corpo por não ter definido o elemento neutro multiplicativo e aditivivo e \(\mathbb{Z}\) não é um corpo por não possuir recíproco.
+\begin{proposition}[Simétrico ou oposto em relação a adição]
+\protect\hypertarget{prp:irsimetrico}{}\label{prp:irsimetrico}\[
+\forall a \in \mathbb{R} \exists! b \in \mathbb{R} \mid a + b = 0,\ b \equiv -a
+\]
+\end{proposition}
 
-Das propriedades definidas acima, pode-se deduzir os teoremas:
+\begin{proposition}[Recíproco ou oposto em relação a multiplicação]
+\protect\hypertarget{prp:irreciproco}{}\label{prp:irreciproco}\[
+\forall a \in \mathbb{R} \exists!  b \in \mathbb{R} \mid ab = 1
+\]
+\end{proposition}
 
 \begin{theorem}[Simplificação para adição]
 \protect\hypertarget{thm:thmsimpladd}{}\label{thm:thmsimpladd}\[
@@ -189,29 +198,17 @@ Das propriedades definidas acima, pode-se deduzir os teoremas:
 \]
 \end{theorem}
 
-\begin{proof}
-Por \eqref{eq:ra5} temos que \(\exists! y \in \mathbb{R} \mid a+y = 0 \Rightarrow y+a+b=y+a+c\) e por \eqref{eq:ra2} \(0+b = 0+c \Rightarrow b = c\)
-\end{proof}
-
 \begin{theorem}[Subtração]
 \protect\hypertarget{thm:thmsubtr}{}\label{thm:thmsubtr}\[
 \forall a,b \in \mathbb{R} \exists! x \in \mathbb{R} \mid a + (-x) = b, \quad a-x=b 
 \]
 \end{theorem}
 
-\begin{proof}
-Sabe-se que \(\exists!y \mid a+y = 0\), esse \(y\) é chamado \(-a\) logo \(a+(-x)+(-a)=b+(-a) \Leftrightarrow -x = b + (-a)\), então podemos reescrever a equação como \(a + b + (-a) = a + b + (-a) \equiv b = b\) que é verdadeira.
-\end{proof}
-
 \begin{theorem}[Divisão]
 \protect\hypertarget{thm:thmdiv}{}\label{thm:thmdiv}\[
 \forall a,b \in \mathbb{R} \exists! x \in \mathbb{R}^* \mid xb = a, \quad \frac{a}{x}=b, \quad \frac{a}{b} = x 
 \]
 \end{theorem}
-
-\begin{proof}
-\(\exists!y\mid by=1 \Rightarrow xby=ay \Rightarrow x = ay \Rightarrow ayb = ayb\) Sendo que essa ultima igualdade resulta em uma expressão verdadeira
-\end{proof}
 
 \begin{theorem}[Frações iguais]
 \protect\hypertarget{thm:thmfrceq}{}\label{thm:thmfrceq}\[
@@ -221,19 +218,11 @@ a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^*
 \]
 \end{theorem}
 
-\begin{proof}
-Temos que \(\frac{a}{b}=\frac{c}{d} \Leftrightarrow \frac{a}{b} - \frac{c}{d} = 0\) e por \ref{thm:thmfracsum} \(\frac{a}{b} - \frac{c}{d} = \frac{ab - bc}{bd} = 0 \Leftrightarrow ab - bc = 0 \equiv ad = bc\)
-\end{proof}
-
 \begin{theorem}[Recíprocos de frações]
 \protect\hypertarget{thm:thmfracinv}{}\label{thm:thmfracinv}\[
 a, b \in \mathbb{R}^* \Rightarrow \frac{1}{\frac{a}{b}} = \frac{b}{a}
 \]
 \end{theorem}
-
-\begin{proof}[Demonstração]
-Por \eqref{eq:ra6} \(\exists!x \in \mathbb{R}^* \mid \frac{a}{b}x = 1 \Leftrightarrow ax = b\) Logo \(x = \frac{b}{a}\)
-\end{proof}
 
 \begin{theorem}[Soma e subtração de frações]
 \protect\hypertarget{thm:thmfracsum}{}\label{thm:thmfracsum}\[
@@ -245,12 +234,6 @@ a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^*
 \]
 \end{theorem}
 
-\begin{proof}
-\$\$
-
-\$\$
-\end{proof}
-
 \begin{theorem}[Multiplicação de frações]
 \protect\hypertarget{thm:thmfracmult}{}\label{thm:thmfracmult}\[
 a \in \mathbb{R} \wedge b,c,d \in \mathbb{R}^* 
@@ -261,17 +244,13 @@ a \in \mathbb{R} \wedge b,c,d \in \mathbb{R}^*
 \]
 \end{theorem}
 
-\begin{proof}
-Temos por \eqref{eq:ra6} que \(\frac{a}{b}\frac{c}{d} = a\frac{1}{b}c\frac{1}{d}\) e por \eqref{eq:ra2} \(a\frac{1}{b}c\frac{1}{d} = ac\frac{1}{b}\frac{1}{d} = \frac{ac}{db}\). Ja para \(\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b}\frac{1}{\frac{c}{d}} = \frac{a}{b} \frac{d}{c}\), por \ref{thm:thmfracinv}
-\end{proof}
+\section{Axiomas e teoremas de ordem}\label{axiomas-e-teoremas-de-ordem}
 
-\subsection{Ordem}\label{ordem}
-
-Um \textbf{corpo} \(K\) é dito ordenado se apartir de seu eixo de simetria, chamado \(0\), e seus subconjuntos \(K^+|\forall k \in K \Rightarrow a > 0\) e \(K^-|\forall k \in K \Rightarrow a < 0\), quaisquer dos elementos \(a, b, c \in K\), satisfazem as propriedades:
-
-\begin{equation}
-a,b \in \mathbb{R} \Leftrightarrow \left\{\begin{matrix} a < b\\ a > b \\ a = b \end{matrix}\right. \label{eq:tricotomia}
-\end{equation}
+\begin{proposition}["Tricotomia]
+\protect\hypertarget{prp:irtricotomia}{}\label{prp:irtricotomia}\[
+a,b \in \mathbb{R} \quad  \Leftrightarrow \quad  a < b \quad \text{ ou } \quad a > b \quad \text{ ou } \quad  a = b
+\]
+\end{proposition}
 
 \begin{theorem}
 \protect\hypertarget{thm:thmordsum}{}\label{thm:thmordsum}\[
@@ -329,6 +308,10 @@ a, b \in \mathbb{R}, c \in \mathbb{R}^- \mid a < b \Rightarrow ac > bc
 a, b \in \mathbb{R}^* \mid a < b \Rightarrow -a > -b
 \]
 \end{theorem}
+
+\[
+f(x) = x^2
+\]
 
   \bibliography{book.bib,packages.bib}
 

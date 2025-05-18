@@ -11,6 +11,10 @@ description: |
   Textos em ánalise e algebra linear
 link-citations: yes
 github-repo: lhndsp/Math-Notes
+rmd_theorems:
+  axiom:
+    name: "Axiom"
+    prefix: "axm"
 ---
 
 ```{r eval=FALSE}
@@ -26,7 +30,7 @@ knitr::write_bib(c(
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, echo = FALSE, message = FALSE)
-library(gganimate)
-library(ggplot2)
-library(latex2exp)
+# library(gganimate)
+# library(ggplot2)
+# library(latex2exp)
 ```

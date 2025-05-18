@@ -1,13 +1,3 @@
-eq:ra0
-eq:ra1
-eq:ra2
-eq:ra3
-eq:ra4
-eq:ra5
-eq:ra6
-eq:ra7
-eq:tricotomia
-números-reais
-axiomas-e-teoremas
-corpo
-ordem
+definição-axiomatica-dos-números-reais
+axiomas-e-teoremas-de-corpo
+axiomas-e-teoremas-de-ordem
