@@ -1,0 +1,335 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Math Notes},
+  pdfauthor={Lucas Porto},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Math Notes}
+\author{Lucas Porto}
+\date{2025-05-16}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}{Lema}[chapter]
+\newtheorem{corollary}{Corolário}[chapter]
+\newtheorem{proposition}{Proposição}[chapter]
+\newtheorem{conjecture}{Conjetura}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Exemple}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercício}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hipótese}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Observação }
+\newtheorem*{solution}{Solução }
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{Números reais}\label{nuxfameros-reais}
+
+\section{Axiomas e teoremas}\label{axiomas-e-teoremas}
+
+\citep{anton2000}
+
+\subsection{Corpo}\label{corpo}
+
+Defini-se como \textbf{corpo} qualquer conjunto \(\mathbb{K}\) no qual estão definidas as operações de soma e multiplicação que satisfazem as propriedades:
+
+\begin{equation} 
+\forall x \in \mathbb{R} ~~ \exists! ~~  a,b,c,d \in \mathbb{R} \mid x = a + b, x = cd\label{eq:ra0}
+\end{equation} \begin{equation} 
+(a + b) + c = a + (c + b) \text{ e } (ab)c = a(bc)\label{eq:ra1}
+\end{equation} \begin{equation} 
+a + b = b + a \text{ e } ab = ba\label{eq:ra2}
+\end{equation} \begin{equation} 
+a + 0 = a \text{ e } 1a = a\label{eq:ra3}
+\end{equation} \begin{equation} 
+a (b + c) = ab + cd\label{eq:ra4}
+\end{equation} \begin{equation} 
+\forall a \in \mathbb{R} \exists! b \in \mathbb{R} \mid a + b = 0\label{eq:ra5}
+\end{equation} \begin{equation} 
+\forall a \in \mathbb{R} \exists!  b \in \mathbb{R} \mid ab = 1\label{eq:ra6}
+\end{equation} \begin{equation} 
+-(-a) = a\label{eq:ra7}
+\end{equation}
+
+São exemplos de corpos os conjuntos \(\mathbb{Q}\), \(\mathbb{R}\) e \(\mathbb{C}\), sendo que \(\mathbb{N}\) não considerado um corpo por não ter definido o elemento neutro multiplicativo e aditivivo e \(\mathbb{Z}\) não é um corpo por não possuir recíproco.
+
+Das propriedades definidas acima, pode-se deduzir os teoremas:
+
+\begin{theorem}[Simplificação para adição]
+\protect\hypertarget{thm:thmsimpladd}{}\label{thm:thmsimpladd}\[
+\forall a,b,c \in \mathbb{R} \mid a+b=a+c \Rightarrow b = c
+\]
+\end{theorem}
+
+\begin{proof}
+Por \eqref{eq:ra5} temos que \(\exists! y \in \mathbb{R} \mid a+y = 0 \Rightarrow y+a+b=y+a+c\) e por \eqref{eq:ra2} \(0+b = 0+c \Rightarrow b = c\)
+\end{proof}
+
+\begin{theorem}[Subtração]
+\protect\hypertarget{thm:thmsubtr}{}\label{thm:thmsubtr}\[
+\forall a,b \in \mathbb{R} \exists! x \in \mathbb{R} \mid a + (-x) = b, \quad a-x=b 
+\]
+\end{theorem}
+
+\begin{proof}
+Sabe-se que \(\exists!y \mid a+y = 0\), esse \(y\) é chamado \(-a\) logo \(a+(-x)+(-a)=b+(-a) \Leftrightarrow -x = b + (-a)\), então podemos reescrever a equação como \(a + b + (-a) = a + b + (-a) \equiv b = b\) que é verdadeira.
+\end{proof}
+
+\begin{theorem}[Divisão]
+\protect\hypertarget{thm:thmdiv}{}\label{thm:thmdiv}\[
+\forall a,b \in \mathbb{R} \exists! x \in \mathbb{R}^* \mid xb = a, \quad \frac{a}{x}=b, \quad \frac{a}{b} = x 
+\]
+\end{theorem}
+
+\begin{proof}
+\(\exists!y\mid by=1 \Rightarrow xby=ay \Rightarrow x = ay \Rightarrow ayb = ayb\) Sendo que essa ultima igualdade resulta em uma expressão verdadeira
+\end{proof}
+
+\begin{theorem}[Frações iguais]
+\protect\hypertarget{thm:thmfrceq}{}\label{thm:thmfrceq}\[
+a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^* 
+\Rightarrow
+\frac{a}{b} = \frac{c}{d} \Leftrightarrow ad = bc 
+\]
+\end{theorem}
+
+\begin{proof}
+Temos que \(\frac{a}{b}=\frac{c}{d} \Leftrightarrow \frac{a}{b} - \frac{c}{d} = 0\) e por \ref{thm:thmfracsum} \(\frac{a}{b} - \frac{c}{d} = \frac{ab - bc}{bd} = 0 \Leftrightarrow ab - bc = 0 \equiv ad = bc\)
+\end{proof}
+
+\begin{theorem}[Recíprocos de frações]
+\protect\hypertarget{thm:thmfracinv}{}\label{thm:thmfracinv}\[
+a, b \in \mathbb{R}^* \Rightarrow \frac{1}{\frac{a}{b}} = \frac{b}{a}
+\]
+\end{theorem}
+
+\begin{proof}[Demonstração]
+Por \eqref{eq:ra6} \(\exists!x \in \mathbb{R}^* \mid \frac{a}{b}x = 1 \Leftrightarrow ax = b\) Logo \(x = \frac{b}{a}\)
+\end{proof}
+
+\begin{theorem}[Soma e subtração de frações]
+\protect\hypertarget{thm:thmfracsum}{}\label{thm:thmfracsum}\[
+a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^* 
+\Rightarrow
+\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} 
+\quad \text{e} \quad 
+\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}
+\]
+\end{theorem}
+
+\begin{proof}
+\$\$
+
+\$\$
+\end{proof}
+
+\begin{theorem}[Multiplicação de frações]
+\protect\hypertarget{thm:thmfracmult}{}\label{thm:thmfracmult}\[
+a \in \mathbb{R} \wedge b,c,d \in \mathbb{R}^* 
+\Rightarrow
+\frac{a}{b}\frac{c}{d} = \frac{ac}{bd} 
+\quad \text{e} \quad
+\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b} \frac{d}{c}
+\]
+\end{theorem}
+
+\begin{proof}
+Temos por \eqref{eq:ra6} que \(\frac{a}{b}\frac{c}{d} = a\frac{1}{b}c\frac{1}{d}\) e por \eqref{eq:ra2} \(a\frac{1}{b}c\frac{1}{d} = ac\frac{1}{b}\frac{1}{d} = \frac{ac}{db}\). Ja para \(\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b}\frac{1}{\frac{c}{d}} = \frac{a}{b} \frac{d}{c}\), por \ref{thm:thmfracinv}
+\end{proof}
+
+\subsection{Ordem}\label{ordem}
+
+Um \textbf{corpo} \(K\) é dito ordenado se apartir de seu eixo de simetria, chamado \(0\), e seus subconjuntos \(K^+|\forall k \in K \Rightarrow a > 0\) e \(K^-|\forall k \in K \Rightarrow a < 0\), quaisquer dos elementos \(a, b, c \in K\), satisfazem as propriedades:
+
+\begin{equation}
+a,b \in \mathbb{R} \Leftrightarrow \left\{\begin{matrix} a < b\\ a > b \\ a = b \end{matrix}\right. \label{eq:tricotomia}
+\end{equation}
+
+\begin{theorem}
+\protect\hypertarget{thm:thmordsum}{}\label{thm:thmordsum}\[
+a, b \in \mathbb{R}^+ \Rightarrow a + b \in \mathbb{R}^+
+\]
+\end{theorem}
+
+\begin{theorem}
+\protect\hypertarget{thm:thmordsubrt}{}\label{thm:thmordsubrt}\[
+a, b \in \mathbb{R}^* \mid a < b \Rightarrow a-b<0
+\]
+\end{theorem}
+
+\begin{theorem}
+\protect\hypertarget{thm:thmordmult}{}\label{thm:thmordmult}\[
+\left\{\begin{matrix}
+a,b \in \mathbb{R}^+ \Rightarrow ab \in \mathbb{R}^+ \\
+a \in \mathbb{R}^+, b \in \mathbb{R}^- \Rightarrow ab \in \mathbb{R}^- \\
+a \in \mathbb{R}^-, b \in \mathbb{R}^+ \Rightarrow ab \in \mathbb{R}^- \\
+\end{matrix}\right.
+\]
+\end{theorem}
+
+\begin{definition}
+\protect\hypertarget{def:defordmult}{}\label{def:defordmult}\[
+a,b \in \mathbb{R}^- \Rightarrow ab \in \mathbb{R}^+ 
+\]
+\end{definition}
+
+\begin{theorem}
+\protect\hypertarget{thm:thmorddiv}{}\label{thm:thmorddiv}\[
+\forall a,b \in \mathbb{R}^* 
+\left\{\begin{matrix}
+|a| < |b| \Rightarrow \frac{a}{b} \in \left]-1,1 \right[\ \\
+|a| > |b| \Rightarrow \frac{a}{b} \notin \left]-1,1 \right[\ \\
+|a| = |b| \Rightarrow \frac{a}{b} = 1
+\end{matrix}\right.
+\]
+\end{theorem}
+
+\begin{theorem}
+\protect\hypertarget{thm:thmordtrans}{}\label{thm:thmordtrans}\[
+a, b, c \in \mathbb{R} \mid a < b \Rightarrow a+c < b+c
+\]
+\end{theorem}
+
+\begin{theorem}
+\protect\hypertarget{thm:thmordmulti}{}\label{thm:thmordmulti}\[
+a, b \in \mathbb{R}, c \in \mathbb{R}^- \mid a < b \Rightarrow ac > bc
+\]
+\end{theorem}
+
+\begin{theorem}
+\protect\hypertarget{thm:thmordinv}{}\label{thm:thmordinv}\[
+a, b \in \mathbb{R}^* \mid a < b \Rightarrow -a > -b
+\]
+\end{theorem}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

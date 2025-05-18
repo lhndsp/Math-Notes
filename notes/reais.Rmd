@@ -1,0 +1,178 @@
+# Números reais
+
+## Axiomas e teoremas
+
+[@anton2000]
+
+### Corpo
+
+Defini-se como **corpo** qualquer conjunto $\mathbb{K}$ no qual estão definidas as operações de soma e multiplicação que satisfazem as propriedades:
+
+\begin{equation} 
+\forall x \in \mathbb{R} ~~ \exists! ~~  a,b,c,d \in \mathbb{R} \mid x = a + b, x = cd(\#eq:ra0)
+\end{equation} \begin{equation} 
+(a + b) + c = a + (c + b) \text{ e } (ab)c = a(bc)(\#eq:ra1)
+\end{equation} \begin{equation} 
+a + b = b + a \text{ e } ab = ba(\#eq:ra2)
+\end{equation} \begin{equation} 
+a + 0 = a \text{ e } 1a = a(\#eq:ra3)
+\end{equation} \begin{equation} 
+a (b + c) = ab + cd(\#eq:ra4)
+\end{equation} \begin{equation} 
+\forall a \in \mathbb{R} \exists! b \in \mathbb{R} \mid a + b = 0(\#eq:ra5)
+\end{equation} \begin{equation} 
+\forall a \in \mathbb{R} \exists!  b \in \mathbb{R} \mid ab = 1(\#eq:ra6)
+\end{equation} \begin{equation} 
+-(-a) = a(\#eq:ra7)
+\end{equation}
+
+São exemplos de corpos os conjuntos $\mathbb{Q}$, $\mathbb{R}$ e $\mathbb{C}$, sendo que $\mathbb{N}$ não considerado um corpo por não ter definido o elemento neutro multiplicativo e aditivivo e $\mathbb{Z}$ não é um corpo por não possuir recíproco.
+
+Das propriedades definidas acima, pode-se deduzir os teoremas:
+
+::: {#thmsimpladd .theorem name="Simplificação para adição"}
+$$
+\forall a,b,c \in \mathbb{R} \mid a+b=a+c \Rightarrow b = c
+$$
+:::
+
+::: proof
+Por \@ref(eq:ra5) temos que $\exists! y \in \mathbb{R} \mid a+y = 0 \Rightarrow y+a+b=y+a+c$ e por \@ref(eq:ra2) $0+b = 0+c \Rightarrow b = c$
+:::
+
+::: {#thmsubtr .theorem name="Subtração"}
+$$
+\forall a,b \in \mathbb{R} \exists! x \in \mathbb{R} \mid a + (-x) = b, \quad a-x=b 
+$$
+:::
+
+::: proof
+Sabe-se que $\exists!y \mid a+y = 0$, esse $y$ é chamado $-a$ logo $a+(-x)+(-a)=b+(-a) \Leftrightarrow -x = b + (-a)$, então podemos reescrever a equação como $a + b + (-a) = a + b + (-a) \equiv b = b$ que é verdadeira.
+:::
+
+::: {#thmdiv .theorem name="Divisão"}
+$$
+\forall a,b \in \mathbb{R} \exists! x \in \mathbb{R}^* \mid xb = a, \quad \frac{a}{x}=b, \quad \frac{a}{b} = x 
+$$
+:::
+
+::: proof
+$\exists!y\mid by=1 \Rightarrow xby=ay \Rightarrow x = ay \Rightarrow ayb = ayb$ Sendo que essa ultima igualdade resulta em uma expressão verdadeira
+:::
+
+::: {#thmfrceq .theorem name="Frações iguais"}
+$$
+a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^* 
+\Rightarrow
+\frac{a}{b} = \frac{c}{d} \Leftrightarrow ad = bc 
+$$
+:::
+
+::: proof
+Temos que $\frac{a}{b}=\frac{c}{d} \Leftrightarrow \frac{a}{b} - \frac{c}{d} = 0$ e por \@ref(thm:thmfracsum) $\frac{a}{b} - \frac{c}{d} = \frac{ab - bc}{bd} = 0 \Leftrightarrow ab - bc = 0 \equiv ad = bc$
+:::
+
+::: {#thmfracinv .theorem name="Recíprocos de frações"}
+$$
+a, b \in \mathbb{R}^* \Rightarrow \frac{1}{\frac{a}{b}} = \frac{b}{a}
+$$
+:::
+
+::: {#proof-fracinv .proof name="Demonstração"}
+Por \@ref(eq:ra6) $\exists!x \in \mathbb{R}^* \mid \frac{a}{b}x = 1 \Leftrightarrow ax = b$ Logo $x = \frac{b}{a}$
+:::
+
+::: {#thmfracsum .theorem name="Soma e subtração de frações"}
+$$
+a,c \in \mathbb{R} \wedge b,d \in \mathbb{R}^* 
+\Rightarrow
+\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} 
+\quad \text{e} \quad 
+\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}
+$$
+:::
+
+::: proof
+\$\$
+
+\$\$
+:::
+
+::: {#thmfracmult .theorem name="Multiplicação de frações"}
+$$
+a \in \mathbb{R} \wedge b,c,d \in \mathbb{R}^* 
+\Rightarrow
+\frac{a}{b}\frac{c}{d} = \frac{ac}{bd} 
+\quad \text{e} \quad
+\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b} \frac{d}{c}
+$$
+:::
+
+::: proof
+Temos por \@ref(eq:ra6) que $\frac{a}{b}\frac{c}{d} = a\frac{1}{b}c\frac{1}{d}$ e por \@ref(eq:ra2) $a\frac{1}{b}c\frac{1}{d} = ac\frac{1}{b}\frac{1}{d} = \frac{ac}{db}$. Ja para $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b}\frac{1}{\frac{c}{d}} = \frac{a}{b} \frac{d}{c}$, por \@ref(thm:thmfracinv)
+:::
+
+### Ordem
+
+Um **corpo** $K$ é dito ordenado se apartir de seu eixo de simetria, chamado $0$, e seus subconjuntos $K^+|\forall k \in K \Rightarrow a > 0$ e $K^-|\forall k \in K \Rightarrow a < 0$, quaisquer dos elementos $a, b, c \in K$, satisfazem as propriedades:
+
+\begin{equation}
+a,b \in \mathbb{R} \Leftrightarrow \left\{\begin{matrix} a < b\\ a > b \\ a = b \end{matrix}\right. (\#eq:tricotomia)
+\end{equation}
+
+::: {#thmordsum .theorem}
+$$
+a, b \in \mathbb{R}^+ \Rightarrow a + b \in \mathbb{R}^+
+$$
+:::
+
+::: {#thmordsubrt .theorem}
+$$
+a, b \in \mathbb{R}^* \mid a < b \Rightarrow a-b<0
+$$
+:::
+
+::: {#thmordmult .theorem}
+$$
+\left\{\begin{matrix}
+a,b \in \mathbb{R}^+ \Rightarrow ab \in \mathbb{R}^+ \\
+a \in \mathbb{R}^+, b \in \mathbb{R}^- \Rightarrow ab \in \mathbb{R}^- \\
+a \in \mathbb{R}^-, b \in \mathbb{R}^+ \Rightarrow ab \in \mathbb{R}^- \\
+\end{matrix}\right.
+$$
+:::
+
+::: {#defordmult .definition}
+$$
+a,b \in \mathbb{R}^- \Rightarrow ab \in \mathbb{R}^+ 
+$$
+:::
+
+::: {#thmorddiv .theorem}
+$$
+\forall a,b \in \mathbb{R}^* 
+\left\{\begin{matrix}
+|a| < |b| \Rightarrow \frac{a}{b} \in \left]-1,1 \right[\ \\
+|a| > |b| \Rightarrow \frac{a}{b} \notin \left]-1,1 \right[\ \\
+|a| = |b| \Rightarrow \frac{a}{b} = 1
+\end{matrix}\right.
+$$
+:::
+
+::: {#thmordtrans .theorem}
+$$
+a, b, c \in \mathbb{R} \mid a < b \Rightarrow a+c < b+c
+$$
+:::
+
+::: {#thmordmulti .theorem}
+$$
+a, b \in \mathbb{R}, c \in \mathbb{R}^- \mid a < b \Rightarrow ac > bc
+$$
+:::
+
+::: {#thmordinv .theorem}
+$$
+a, b \in \mathbb{R}^* \mid a < b \Rightarrow -a > -b
+$$
+:::
